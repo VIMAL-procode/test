@@ -1,0 +1,32 @@
+<head>
+    <style>
+        body{
+            margin:0;
+            border:0;
+        }
+        .post{
+            background:#3e9eca;
+            width:fit-content;
+        }
+        .post h3{
+           color: brown;
+        }
+    </style>
+
+</head>
+<h1 align="center">Blog - {{post_detail.title}}</h1>
+<h2>Today : {{time}}</h2>
+<div class="post">
+<h3> Title:{{post_detail.title}}</h3>
+<p>Description : {{post_detail.body}}</p>
+</div>
+<div>
+    {% if today_is_weekend %}
+<p>Welcome to the weekend!</p>
+{% else %}
+<p>Get back to work.</p>
+{% endif %}
+{% ifequal user currentuser %}
+<h1>Welcome!</h1>
+{% endifequal %}
+</div>
